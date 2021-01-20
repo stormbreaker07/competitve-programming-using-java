@@ -1,0 +1,28 @@
+
+
+---> SERIALIZABILTY <---
+
+serializable and transient;
+serialization mainly use to store object in files.
+it stores data in non human readable format.
+it is legacy in java lanquage.
+found in java 1.1.
+use to do serialize a file to see the data of object in the file.
+it is a markdown interface.
+that means it is an empty interface.
+serializable interface is mandatory to be implement by file need to be serialized.
+not used anymore.
+String is Serializable ,all primitive type are Serializable.
+String implements serializable interface.
+if a class doesnt implement serializable but it super class implements serializable interface then,
+keep in mind that it will also serializable.
+
+serialversionUID it is id assign to data object data when write on a file so if u assign the data
+to some other object type it can tell you with InvalidClassException that it class object is different. 
+
+
+transient is use as modifier to stop any instance or parameter to not been store in file.
+it will not bee seen after deserializing the object.
+
+
+---> JAVA.NIO <---

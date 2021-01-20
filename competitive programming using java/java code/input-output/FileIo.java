@@ -18,7 +18,7 @@ public class FileIo {
         // try 
         // {
         //     InputStreamReader x = new InputStreamReader(new FileInputStream("newfile.txt"));
-        //     BufferedReader y = new BufferedReader(x); 
+        //     BufferedReader y = new BufferedReader(x);    
         //     String line;
         //     String s = null;
         //     while((line = y.readLine())!=null)
