@@ -34,7 +34,7 @@ public class Prims {
 
         operation(1, adj , n , m);
     }
-
+    
     public static void operation(int x , ArrayList<data> adj[] , int n ,int m) {
 
         int marked[] = new int[n+1];
