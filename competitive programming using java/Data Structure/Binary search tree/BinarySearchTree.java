@@ -62,7 +62,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
                 if(node.parent!=null && node.parent.leftChild == node) {
                     node.parent.leftChild = null;
                 }
-                else if(node.parent!=null && node.rightChild == null) {
+                else if(node.parent!=null && node.parent.rightChild == null) {
                     node.parent.rightChild = null;
                 }
              
