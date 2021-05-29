@@ -1,12 +1,12 @@
 package Connection;
 
-import entity.*;
-import entity.inheritence.Bike;
-import entity.inheritence.Car;
-import entity.inheritence.Vechile;
+import entity.hql.User;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -51,22 +51,38 @@ public class Main {
 //        temp.setStudent(student);
 
 
-        Car c = new Car();
-        c.setName("Jeep Compas");
-        c.setNumberOfTires(4);
+//        Car c = new Car();
+//        c.setName("Jeep Compas");
+//        c.setNumberOfTires(4);
+//
+//        Vechile v = new Vechile();
+//        v.setName("parent class");
+//
+//        Bike b = new Bike();
+//        b.setName("Ktm Duke");
+//        b.setNumberOfTires(2);
 
-        Vechile v = new Vechile();
-        v.setName("parent class");
+        for(int i=1;i<=10;i++) {
+            User user = new User();
+            user.setName("user" + i);
+            session.save(user);
+        }
 
-        Bike b = new Bike();
-        b.setName("Ktm Duke");
-        b.setNumberOfTires(2);
-
-        session.save(c);
-        session.save(v);
-        session.save(b);
         session.getTransaction().commit();
 
+        session.beginTransaction();
+//        Query query = session.getNamedQuery("User.id");
+//        query.setParameter("userId" , 10);
+//        List<User> list = (List<User>) query.list();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("name" , "user 10"));
+        List<User> list = (List<User>) criteria.list();
+
+        for(User x : list) {
+            System.out.println(x.getName());
+        }
+        session.getTransaction().commit();
+        session.close();
     }
 
 }
