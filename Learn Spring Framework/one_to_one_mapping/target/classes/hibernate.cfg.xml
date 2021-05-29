@@ -14,14 +14,14 @@
         <!--  Set the current session context  -->
         <property name="current_session_context_class">thread</property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
 <!--        <mapping class="entity.UserDetails112" />-->
 <!--        <mapping class="entity.User" />-->
 <!--        <mapping class="entity.Address" />-->
-        <mapping class="entity.inheritence.Vechile" />
-        <mapping class="entity.inheritence.Car" />
-        <mapping class="entity.inheritence.Bike" />
+<!--        <mapping class="entity.inheritence.Vechile" />-->
+<!--        <mapping class="entity.inheritence.Car" />-->
+        <mapping class="entity.hql.User" />
 
 <!--        <mapping class="entity.Course" />-->
 
